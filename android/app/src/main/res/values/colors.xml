@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- Continuity Specific Colors -->
+    <!-- Dark Background for Onboarding/Auth -->
+    <color name="dark_background">#0F172A</color> <!-- Slate 900 like -->
+    <color name="dark_surface">#1E293B</color>
+    <color name="primary_blue">#3B82F6</color>
+    
+    <!-- Light Background for Dashboard -->
+    <color name="light_background">#F3F4F6</color> <!-- Gray 100 -->
+    <color name="light_surface">#FFFFFF</color>
+</resources>

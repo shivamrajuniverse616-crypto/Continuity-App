@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "970935933098",
+    "project_id": "continuity-life",
+    "storage_bucket": "continuity-life.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:970935933098:android:8807eabe9e864a4b3058d3",
+        "android_client_info": {
+          "package_name": "com.stxdevs.continuity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "970935933098-uqdmuaauoj5bu20mfg1838cdqlg3i6b3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB22TAqR5gCh3XYUTrH1zIkqJ1CyQs7D2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "970935933098-uqdmuaauoj5bu20mfg1838cdqlg3i6b3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

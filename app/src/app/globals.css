@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+
+  /* Premium Ghibli Palette */
+  --grapefruit-pink: #FF7477;
+  --light-coral: #E69597;
+  --cotton-rose: #CEB5B7;
+  --light-blue: #B5D6D6;
+  --soft-cyan: #9CF6F6;
+
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --glass-surface: rgba(255, 255, 255, 0.85);
+}
+
+@theme {
+  --color-grapefruit: var(--grapefruit-pink);
+  --color-coral: var(--light-coral);
+  --color-rose: var(--cotton-rose);
+  --color-sky: var(--light-blue);
+  --color-cyan: var(--soft-cyan);
+  --color-glass: var(--glass-surface);
+
+  --font-inter: 'Inter', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+  --font-dm-serif: 'DM Serif Display', serif;
+  /* Use Homemade Apple, then fall back to Windows Ink/Segoe fonts, then generic cursive */
+  /* --font-handwriting: var(--font-homemade-apple), 'Ink Free', 'Segoe Print', 'Bradley Hand', 'Chalkboard SE', cursive; */
+}
+
+body {
+  color: #4a4a4a;
+  /* Softer text for pastel theme */
+  background: linear-gradient(135deg, var(--light-blue), var(--cotton-rose), var(--light-coral));
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Utilities */
+.glass-panel {
+  background: var(--glass-surface);
+  /* backdrop-filter: blur(12px); - Disabled for performance */
+  /* -webkit-backdrop-filter: blur(12px); */
+  border: 1px solid var(--glass-border);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #fff, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Force Handwriting Font */
+.font-handwriting {
+  font-family: var(--font-caveat), 'Brush Script MT', cursive !important;
+}

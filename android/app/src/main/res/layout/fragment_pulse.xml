@@ -68,8 +68,7 @@
                         app:tint="#EF4444"
                         android:background="@drawable/bg_mood_item"
                         android:padding="16dp"
-                        android:stateListAnimator="@null" 
-                        android:selected="true"/> <!-- Simulating selection -->
+                        android:stateListAnimator="@null"/> <!-- Simulating selection -->
                         
                      <ImageView
                         android:layout_width="48dp"

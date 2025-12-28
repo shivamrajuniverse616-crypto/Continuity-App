@@ -15,8 +15,8 @@ class HabitAdapter(
 ) : RecyclerView.Adapter<HabitAdapter.HabitViewHolder>() {
 
     class HabitViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val tvTitle: TextView = view.findViewById(R.id.tvCommonTitle) // We will create a generic item layout or reuse
-        val cbCompleted: CheckBox = view.findViewById(R.id.cbCommonCompleted)
+        val tvTitle: TextView = view.findViewById(R.id.tvTaskTitle)
+        val cbCompleted: CheckBox = view.findViewById(R.id.cbTaskCompleted)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HabitViewHolder {
@@ -28,14 +28,11 @@ class HabitAdapter(
 
     override fun onBindViewHolder(holder: HabitViewHolder, position: Int) {
         val habit = habits[position]
-        // Bind logic... reusing item_task IDs which are tvTaskTitle and cbTaskCompleted
-        val titleView = holder.itemView.findViewById<TextView>(R.id.tvTaskTitle)
-        val checkBox = holder.itemView.findViewById<CheckBox>(R.id.cbTaskCompleted)
         
-        titleView.text = habit.title
-        checkBox.isChecked = habit.isCompleted
+        holder.tvTitle.text = habit.title
+        holder.cbCompleted.isChecked = habit.isCompleted
         
-        checkBox.setOnCheckedChangeListener { _, isChecked ->
+        holder.cbCompleted.setOnCheckedChangeListener { _, isChecked ->
             onHabitChecked(habit, isChecked)
         }
     }

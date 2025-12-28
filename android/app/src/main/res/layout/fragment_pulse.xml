@@ -50,9 +50,10 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center"
-                    android:layout_marginBottom="32dp">
+                    android:layout_marginBottom="24dp">
                     
                     <ImageView
+                        android:id="@+id/moodLow"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:src="@drawable/ic_nav_pulse"
@@ -62,15 +63,16 @@
                         android:layout_marginEnd="16dp"/>
                         
                     <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
+                        android:id="@+id/moodNeutral"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
                         android:src="@drawable/ic_nav_pulse"
-                        app:tint="#EF4444"
+                        app:tint="#9CA3AF"
                         android:background="@drawable/bg_mood_item"
-                        android:padding="16dp"
-                        android:stateListAnimator="@null"/> <!-- Simulating selection -->
+                        android:padding="12dp"/> 
                         
                      <ImageView
+                        android:id="@+id/moodHigh"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:src="@drawable/ic_nav_pulse"
@@ -79,16 +81,27 @@
                         android:padding="12dp"
                         android:layout_marginStart="16dp"/>
                 </LinearLayout>
-                                
-                <Button
+
+                <EditText
+                    android:id="@+id/etMoodNote"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Logged"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="Add a note (optional)"
+                    android:padding="12dp"
+                    android:layout_marginBottom="16dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="#9CA3AF"
+                    android:textSize="14sp"/>
+                                
+                <Button
+                    android:id="@+id/btnLogPulse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Log Pulse"
                     android:textAllCaps="false"
-                    android:backgroundTint="#D1FAE5"
-                    android:textColor="#065F46"
-                    app:icon="@android:drawable/checkbox_on_background"
-                    app:iconTint="#065F46"
+                    android:backgroundTint="@color/primary_blue"
+                    android:textColor="@color/white"
                     app:elevation="0dp"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -103,55 +116,13 @@
             android:textColor="@color/black"
             android:layout_marginBottom="16dp"/>
             
-        <!-- Placeholder for list -->
-        <androidx.cardview.widget.CardView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPulseHistory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="0dp"
-            app:cardBackgroundColor="@color/white"
-            android:layout_marginBottom="12dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
-                <ImageView
-                     android:layout_width="40dp"
-                     android:layout_height="40dp"
-                     android:src="@drawable/ic_nav_pulse"
-                     android:background="@drawable/bg_mood_item"
-                     android:backgroundTint="#FEF3C7"
-                     app:tint="#D97706"
-                     android:padding="8dp"/>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_marginStart="16dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Energized"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Ready to tackle the big project."
-                        android:textColor="#6B7280"
-                        android:textSize="12sp"/>
-                </LinearLayout>
-                <TextView
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:text="9:00 AM"
-                     android:textColor="#9CA3AF"
-                     android:textSize="12sp"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+            android:layoutAnimation="@anim/layout_animation_fall_down"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_pulse"/>
 
     </LinearLayout>
 </ScrollView>

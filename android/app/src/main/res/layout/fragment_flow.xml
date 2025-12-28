@@ -1,192 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/light_background"
-    tools:context=".ui.flow.FlowFragment">
+    android:padding="24dp">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/tvFlowTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:text="Task Manager"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvFlowSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome back to your flow."
+        android:textColor="#6B7280"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvFlowTitle" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp">
+        android:layout_marginTop="24dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="0dp"
+        app:layout_constraintTop_toBottomOf="@id/tvFlowSubtitle">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-            <LinearLayout
-                 android:layout_width="0dp"
-                 android:layout_height="wrap_content"
-                 android:layout_weight="1"
-                 android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Task Manager"
-                    android:fontFamily="serif"
-                    android:textSize="32sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Welcome back to your flow."
-                    android:textColor="#6B7280"/>
-            </LinearLayout>
-             <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:src="@drawable/ic_nav_profile"
-                app:tint="#6B7280"/>
-        </LinearLayout>
-            
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="24dp"
-            app:cardElevation="0dp"
-            app:cardBackgroundColor="@color/white"
-            android:layout_marginTop="24dp">
-            
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="24dp">
-                
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:layout_marginBottom="16dp">
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="The Flow"
-                        android:fontFamily="serif"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0 Pending"
-                        android:background="#F3F4F6"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="4dp"
-                        android:textColor="#4B5563"
-                        android:textSize="12sp"/>
-                </LinearLayout>
-                
-                 <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:background="#F9FAFB"
-                        android:padding="8dp"
-                        android:gravity="center_vertical">
-                        
-                        <EditText
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@null"
-                            android:padding="8dp"
-                            android:hint="What needs to be done?"
-                            android:textColor="@color/black"
-                            android:textColorHint="#9CA3AF"/>
-                            
-                        <ImageView
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:src="@android:drawable/ic_input_add"
-                            app:tint="@color/white"
-                            android:background="@drawable/bg_button_gradient"
-                            android:backgroundTint="#EF4444"
-                            android:padding="4dp"/>
-                    </LinearLayout>
-                    
-                    <!-- Task Options (Time, Recurrence, Icon) -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="16dp">
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="TIME\n--:--"
-                            android:textSize="10sp"
-                            android:textColor="#6B7280"
-                            android:background="@drawable/bg_input_field"
-                            android:backgroundTint="#FFFFFF"
-                            android:padding="12dp"
-                            android:layout_marginEnd="8dp"/>
-                             <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="RECURRENCE\nOne-time"
-                            android:textSize="10sp"
-                            android:textColor="#6B7280"
-                            android:background="@drawable/bg_input_field"
-                            android:backgroundTint="#FFFFFF"
-                            android:padding="12dp"
-                            android:layout_marginStart="8dp"/>
-                    </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        
-        <TextView
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:text="SUGGESTED TASKS"
-             android:textColor="#6B7280"
-             android:textStyle="bold"
-             android:layout_marginTop="24dp"
-             android:layout_marginBottom="16dp"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="24dp">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="0dp"
-            app:cardBackgroundColor="@color/white"
-            android:layout_marginBottom="12dp">
-             <LinearLayout
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="serif"
+                android:text="The Flow"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etTaskTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_input_field"
+                android:hint="What needs to be done?"
                 android:padding="16dp"
-                android:gravity="center_vertical">
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_nav_pulse"
-                    app:tint="#3B82F6"
-                    android:background="@drawable/bg_mood_item"
-                    android:backgroundTint="#DBEAFE"
-                    android:padding="10dp"/>
-                <TextView
-                     android:layout_width="0dp"
-                     android:layout_height="wrap_content"
-                     android:layout_weight="1"
-                     android:text="Drink water"
-                     android:textColor="@color/black"
-                     android:layout_marginStart="16dp"/>
-                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@android:drawable/ic_input_add"
-                    app:tint="#EF4444"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                android:textColor="@color/black"
+                android:textColorHint="#9CA3AF" />
 
-    </LinearLayout>
-</ScrollView>
+            <Button
+                android:id="@+id/btnAddTask"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/primary_blue"
+                android:text="Add to Flow"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvTaskListHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="YOUR TASKS"
+        android:textColor="#6B7280"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardInput" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTasks"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layoutAnimation="@anim/layout_animation_fall_down"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTaskListHeader"
+        tools:listitem="@layout/item_task" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,13 +8,14 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     
-    <!-- Continuity Specific Colors -->
-    <!-- Dark Background for Onboarding/Auth -->
-    <color name="dark_background">#0F172A</color> <!-- Slate 900 like -->
-    <color name="dark_surface">#1E293B</color>
     <color name="primary_blue">#3B82F6</color>
-    
-    <!-- Light Background for Dashboard -->
-    <color name="light_background">#F3F4F6</color> <!-- Gray 100 -->
-    <color name="light_surface">#FFFFFF</color>
+    <color name="dark_background">#0F172A</color>
+    <color name="light_background">#F8FAFC</color>
+
+    <color name="green_100">#D1FAE5</color>
+    <color name="green_600">#059669</color>
+    <color name="yellow_100">#FEF3C7</color>
+    <color name="yellow_600">#D97706</color>
+    <color name="red_100">#FEE2E2</color>
+    <color name="red_600">#DC2626</color>
 </resources>

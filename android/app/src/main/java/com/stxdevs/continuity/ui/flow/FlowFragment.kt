@@ -98,6 +98,6 @@ class FlowFragment : Fragment() {
         
         firestore.collection("users").document(uid).collection("tasks")
             .document(task.id)
-            .update("completed", isCompleted)
+            .update("isCompleted", isCompleted)
     }
 }

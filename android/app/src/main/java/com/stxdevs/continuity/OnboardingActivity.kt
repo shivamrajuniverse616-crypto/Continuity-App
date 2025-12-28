@@ -88,7 +88,7 @@ class OnboardingActivity : AppCompatActivity() {
         layoutParams.setMargins(8, 0, 8, 0)
         for (i in indicators.indices) {
             indicators[i] = ImageView(applicationContext)
-            indicators[i].apply {
+            indicators[i]?.apply {
                 this.setImageDrawable(
                     ContextCompat.getDrawable(
                         applicationContext,
@@ -97,7 +97,7 @@ class OnboardingActivity : AppCompatActivity() {
                 )
                 this.layoutParams = layoutParams
             }
-            indicatorLayout.addView(indicators[i])
+            indicators[i]?.let { indicatorLayout.addView(it) }
         }
     }
 

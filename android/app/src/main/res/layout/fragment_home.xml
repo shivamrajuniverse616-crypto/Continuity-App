@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_background"
-    tools:context=".ui.home.HomeFragment">
+    android:background="#F3F4F6">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,10 +41,8 @@
                     android:text="Welcome back to your flow."
                     android:textColor="#6B7280"/>
             </LinearLayout>
-            
-            <!-- User Avatar Placeholder (Link to Profile) -->
-            <ImageView
-                android:id="@+id/ivAvatar"
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:src="@drawable/ic_nav_profile"
@@ -189,5 +186,90 @@
             </LinearLayout>
          </androidx.cardview.widget.CardView>
 
+        <!-- The Sequence Card (Habits) -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginBottom="24dp">
+            
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+                    
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="The Sequence"
+                        android:fontFamily="serif"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                        
+                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2/3 Done"
+                        android:background="@drawable/bg_pill_gray"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="6dp"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="#374151"/>
+                </LinearLayout>
+                
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSequenceList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:itemCount="2"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- The Horizon Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+             <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="The Horizon"
+                android:fontFamily="serif"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+                
+             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View All ->"
+                android:textColor="@color/red_600"
+                android:textStyle="bold"
+                android:visibility="gone"/> <!-- Removing view all logic for simplicity for now -->
+        </LinearLayout>
+        
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvHorizonList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_onboarding"/> 
+
     </LinearLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

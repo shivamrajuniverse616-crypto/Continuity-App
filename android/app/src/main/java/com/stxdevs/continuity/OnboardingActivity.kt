@@ -20,10 +20,18 @@ class OnboardingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         
-        // potential check for shared prefs
+        // Check if user is already signed in
+        if (com.google.firebase.auth.FirebaseAuth.getInstance().currentUser != null) {
+            startActivity(Intent(this, DashboardActivity::class.java))
+            finish()
+            return
+        }
+
+        // Check if onboarding is already completed
         if (getSharedPreferences("AppPrefs", Context.MODE_PRIVATE).getBoolean("OnboardingComplete", false)) {
-            // Check auth then redirect
-            // For now, let's just let it flow since AuthActivity handles auth check
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+            return
         }
 
         setContentView(R.layout.activity_onboarding)

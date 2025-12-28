@@ -42,15 +42,15 @@ class PulseAdapter(private var pulses: List<Pulse>) :
         when (pulse.mood) {
             "High" -> {
                 holder.ivMoodIcon.setColorFilter(ContextCompat.getColor(context, R.color.green_600))
-                holder.ivMoodIcon.background.setTint(ContextCompat.getColor(context, R.color.green_100))
+                holder.ivMoodIcon.background?.setTint(ContextCompat.getColor(context, R.color.green_100))
             }
             "Neutral" -> {
                 holder.ivMoodIcon.setColorFilter(ContextCompat.getColor(context, R.color.yellow_600))
-                holder.ivMoodIcon.background.setTint(ContextCompat.getColor(context, R.color.yellow_100))
+                holder.ivMoodIcon.background?.setTint(ContextCompat.getColor(context, R.color.yellow_100))
             }
             "Low" -> {
                 holder.ivMoodIcon.setColorFilter(ContextCompat.getColor(context, R.color.red_600))
-                holder.ivMoodIcon.background.setTint(ContextCompat.getColor(context, R.color.red_100))
+                holder.ivMoodIcon.background?.setTint(ContextCompat.getColor(context, R.color.red_100))
             }
         }
     }

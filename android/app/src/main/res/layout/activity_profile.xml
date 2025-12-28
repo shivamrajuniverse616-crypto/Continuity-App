@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_background"
+    tools:context=".ProfileActivity">
+
+    <!-- Header -->
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_menu_revert"
+        app:tint="@color/white"
+        android:padding="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+        
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="24dp"/>
+        
+     <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_menu_manage"
+        app:tint="#64748B"
+        android:padding="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Avatar -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvAvatar"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:cardCornerRadius="60dp"
+        app:cardBackgroundColor="#3B82F6"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnBack">
+        <ImageView
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:src="@drawable/ic_nav_profile"
+             android:padding="16dp"
+             app:tint="@color/white"/>
+    </androidx.cardview.widget.CardView>
+    
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Name"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvAvatar"/>
+        
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="user@example.com"
+        android:textColor="#94A3B8"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvName"/>
+        
+    <LinearLayout
+        android:id="@+id/llActions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/tvEmail">
+        
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            app:cornerRadius="20dp"
+            android:layout_marginEnd="12dp"/>
+            
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share"
+            android:backgroundTint="#1E293B"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            app:cornerRadius="20dp"
+            app:strokeColor="#334155"
+            app:strokeWidth="1dp"
+            android:layout_marginStart="12dp"/>
+    </LinearLayout>
+
+    <!-- Stats Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/llActions">
+        
+        <!-- Focus Card -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="#1E293B"
+            android:padding="16dp"
+            android:gravity="center"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_input_field">
+             <ImageView
+                 android:layout_width="24dp"
+                 android:layout_height="24dp"
+                 android:src="@drawable/ic_nav_home"
+                 app:tint="#3B82F6"/>
+             <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="42h"
+                  android:textStyle="bold"
+                  android:textSize="20sp"
+                  android:textColor="@color/white"
+                  android:layout_marginTop="8dp"/>
+             <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="FOCUS"
+                  android:textSize="10sp"
+                  android:textColor="#94A3B8"
+                  android:layout_marginTop="4dp"/>
+        </LinearLayout>
+        
+        <!-- Tasks Card -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="#1E293B"
+            android:padding="16dp"
+            android:gravity="center"
+            android:layout_marginHorizontal="8dp"
+            android:background="@drawable/bg_input_field">
+             <ImageView
+                 android:layout_width="24dp"
+                 android:layout_height="24dp"
+                 android:src="@android:drawable/checkbox_on_background"
+                 app:tint="#10B981"/>
+             <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="128"
+                  android:textStyle="bold"
+                  android:textSize="20sp"
+                  android:textColor="@color/white"
+                  android:layout_marginTop="8dp"/>
+             <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="TASKS"
+                  android:textSize="10sp"
+                  android:textColor="#94A3B8"
+                  android:layout_marginTop="4dp"/>
+        </LinearLayout>
+        
+        <!-- Streak Card -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="#1E293B"
+            android:padding="16dp"
+            android:gravity="center"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_input_field">
+             <ImageView
+                 android:layout_width="24dp"
+                 android:layout_height="24dp"
+                 android:src="@drawable/ic_nav_pulse"
+                 app:tint="#F97316"/>
+             <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="12"
+                  android:textStyle="bold"
+                  android:textSize="20sp"
+                  android:textColor="@color/white"
+                  android:layout_marginTop="8dp"/>
+             <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="STREAK"
+                  android:textSize="10sp"
+                  android:textColor="#94A3B8"
+                  android:layout_marginTop="4dp"/>
+        </LinearLayout>
+        
+    </LinearLayout>
+    
+    <!-- Sign Out Button -->
+    <Button
+        android:id="@+id/btnSignOut"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="32dp"
+        android:text="Sign Out"
+        android:textAllCaps="false"
+        android:backgroundTint="#EF4444"
+        android:textColor="@color/white"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

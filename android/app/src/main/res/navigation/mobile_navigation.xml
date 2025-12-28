@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.stxdevs.continuity.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_pulse"
+        android:name="com.stxdevs.continuity.ui.pulse.PulseFragment"
+        android:label="Pulse"
+        tools:layout="@layout/fragment_pulse" />
+
+    <fragment
+        android:id="@+id/nav_flow"
+        android:name="com.stxdevs.continuity.ui.flow.FlowFragment"
+        android:label="Flow"
+        tools:layout="@layout/fragment_flow" />
+        
+    <fragment
+        android:id="@+id/nav_horizon"
+        android:name="com.stxdevs.continuity.ui.horizon.HorizonFragment"
+        android:label="Horizon"
+        tools:layout="@layout/fragment_horizon" />
+
+</navigation>

@@ -9,9 +9,11 @@ class DashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
 
-        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
-        bottomNav.selectedItemId = R.id.nav_home
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment) as androidx.navigation.fragment.NavHostFragment
+        val navController = navHostFragment.navController
         
-        // TODO: Handle navigation selection
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
+        androidx.navigation.ui.NavigationUI.setupWithNavController(bottomNav, navController)
     }
 }

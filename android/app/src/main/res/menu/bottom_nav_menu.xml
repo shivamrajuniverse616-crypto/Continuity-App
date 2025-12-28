@@ -2,18 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_home"
-        android:icon="@android:drawable/ic_menu_view"
+        android:icon="@drawable/ic_nav_home"
         android:title="Home" />
     <item
         android:id="@+id/nav_pulse"
-        android:icon="@android:drawable/ic_menu_compass"
+        android:icon="@drawable/ic_nav_pulse"
         android:title="Pulse" />
     <item
-        android:id="@+id/nav_journal"
-        android:icon="@android:drawable/ic_menu_agenda"
-        android:title="Journal" />
+        android:id="@+id/nav_flow"
+        android:icon="@drawable/ic_nav_flow"
+        android:title="Flow" />
     <item
-        android:id="@+id/nav_ai"
-        android:icon="@android:drawable/ic_menu_search"
-        android:title="AI" />
+        android:id="@+id/nav_horizon"
+        android:icon="@drawable/ic_nav_horizon"
+        android:title="Horizon" />
+     <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_nav_profile"
+        android:title="Profile" />
 </menu>

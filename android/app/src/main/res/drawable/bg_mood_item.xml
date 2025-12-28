@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true">
+        <shape android:shape="oval">
+            <solid android:color="#FEE2E2" /> <!-- Light Red/Pink for active -->
+            <stroke android:width="2dp" android:color="#EF4444" /> <!-- Red stroke -->
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#F3F4F6" /> <!-- Gray default -->
+        </shape>
+    </item>
+</selector>
